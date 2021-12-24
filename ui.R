@@ -25,7 +25,7 @@ fluidPage(
     column(6,
        h2("Pelabuhan Gresik", style="font-weight: bold;"),
        br(),
-       div("Pelabuhan Gresik merupakan pe labuhan berukuran menengah yang terletak di Kabupaten Gresik, Jawa Timur, Indonesia. Lebih tepatnya lokasi Pelabuhan Gresik berada pada selat madura atau sebelah utara Pelabuhan Tanjung Perak Surabaya. Pelabuhan Gresik memiliki UN/Locode resmi, yakni IDGRE. Jenis kapal yang biasa singgah di Pelabuhan Gresik berjenis Cargo (20%), Oil/Chemical Tanker (16%), General Cargo (15%), Bulk Carrier (11%), Oil Products Tanker (8%). Panjang maksimum kapal yang tercatat memasuki pelabuhan ini adalah 230 meter, draught maksimum adalah 13 meter, serta bobot mati maksimum adalah 82214 ton.", style="text-align: justify; font-size: 1.3em;"),
+       div("Pelabuhan Gresik merupakan pelabuhan berukuran menengah yang terletak di Kabupaten Gresik, Jawa Timur, Indonesia. Lebih tepatnya lokasi Pelabuhan Gresik berada pada selat madura atau sebelah utara Pelabuhan Tanjung Perak Surabaya. Pelabuhan Gresik memiliki UN/Locode resmi, yakni IDGRE. Jenis kapal yang biasa singgah di Pelabuhan Gresik berjenis Cargo (20%), Oil/Chemical Tanker (16%), General Cargo (15%), Bulk Carrier (11%), Oil Products Tanker (8%). Panjang maksimum kapal yang tercatat memasuki pelabuhan ini adalah 230 meter, draught maksimum adalah 13 meter, serta bobot mati maksimum adalah 82214 ton.", style="text-align: justify; font-size: 1.3em;"),
     ),
     column(6,
        div(img(src='https://photos.marinetraffic.com/ais/showphoto.aspx?photoid=2127435', style="width: 100%; border-radius: 1em;"), style="text-align: center;")
@@ -81,7 +81,7 @@ fluidPage(
   div(span(actionButton("race", "Jumlah Kapal Berdasarkan Jenis Kapal")), span(actionButton("flag", "Jumlah Kapal Berdasarkan Asal Negara"))),
   
   hr(),
-  div(div(imageOutput("bar_race"),imageOutput("flag_race"), style="text-align: center;"), style="height: 720px;"),
+  div(div(imageOutput("bar_race"), style="text-align: center;"), style="height: 720px;"),
   
   add_busy_spinner(spin = "fading-circle"),
   br(),
