@@ -17,28 +17,28 @@ library(shinybusy)
 library(DT)
 
 #load full data untuk ditampilkan dalam bentuk tabel
-myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/full.csv"
+myfile <- "https://raw.githubusercontent.com/Xeryus01/port/main/full.csv"
 full <- read_csv(myfile)
 full$`Ata/atd` <- as.Date(full$`Ata/atd`, "%Y-%m-%d")
 
 #load data jumlah kapal harian
-myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/jumlah_kapal.csv"
+myfile <- "https://raw.githubusercontent.com/Xeryus01/port/main/jumlah_kapal.csv"
 per_day <- read_csv(myfile)
 per_day$time <- as.Date(per_day$time, "%Y-%m-%d")
 
 #load data kapal berdasarkan status perjalanan
-myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/status_kapal.csv"
+myfile <- "https://raw.githubusercontent.com/Xeryus01/port/main/status_kapal.csv"
 status <- read_csv(myfile)
 status$date <- as.Date(status$date, "%Y-%m-%d")
 
 #load data kapal berdasarkan jenis kapal
-myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/jenis_kapal.csv"
+myfile <- "https://raw.githubusercontent.com/Xeryus01/port/main/jenis_kapal.csv"
 data_jenis_kapal <- read_csv(myfile)
 data_jenis_kapal$time <- as.Date(data_jenis_kapal$date, "%Y-%m-%d")
 data_jenis_kapal$betterTime <- format(as.Date(data_jenis_kapal$time), '%d %B %Y')
 
 #load data kapal berdasarkan asal negara kapal
-myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/negara_kapal.csv"
+myfile <- "https://raw.githubusercontent.com/Xeryus01/port/main/negara_kapal.csv"
 data_asal_kapal <- read_csv(myfile)
 data_asal_kapal$time <- as.Date(data_asal_kapal$date, "%Y-%m-%d")
 data_asal_kapal$betterTime <- format(as.Date(data_asal_kapal$time), '%d %B %Y')
