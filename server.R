@@ -17,24 +17,29 @@ library(shinybusy)
 library(DT)
 
 #load full data untuk ditampilkan dalam bentuk tabel
-full <- read_excel("C:/Users/Akhmad Fadil Mubarok/Downloads/data disjas/disjas.xlsx", sheet = "port calls")
+myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/full.csv"
+full <- read_csv(myfile)
 full$`Ata/atd` <- as.Date(full$`Ata/atd`, "%Y-%m-%d")
 
 #load data jumlah kapal harian
-per_day <- read_excel("C:/Users/Akhmad Fadil Mubarok/Downloads/data disjas/disjas.xlsx", sheet = "line chart kapal harian")
+myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/jumlah_kapal.csv"
+per_day <- read_csv(myfile)
 per_day$time <- as.Date(per_day$time, "%Y-%m-%d")
 
 #load data kapal berdasarkan status perjalanan
-status <- read_excel("C:/Users/Akhmad Fadil Mubarok/Downloads/data disjas/disjas.xlsx", sheet = "status kedatangan")
+myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/status_kapal.csv"
+status <- read_csv(myfile)
 status$date <- as.Date(status$date, "%Y-%m-%d")
 
 #load data kapal berdasarkan jenis kapal
-data_jenis_kapal <- read_excel("C:/Users/Akhmad Fadil Mubarok/Downloads/data disjas/disjas.xlsx", sheet = "bar chart per jenis kapal")
+myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/jenis_kapal.csv"
+data_jenis_kapal <- read_csv(myfile)
 data_jenis_kapal$time <- as.Date(data_jenis_kapal$date, "%Y-%m-%d")
 data_jenis_kapal$betterTime <- format(as.Date(data_jenis_kapal$time), '%d %B %Y')
 
 #load data kapal berdasarkan asal negara kapal
-data_asal_kapal <- read_excel("C:/Users/Akhmad Fadil Mubarok/Downloads/data disjas/disjas.xlsx", sheet = "bar chart per negara")
+myfile <- "https://raw.githubusercontent.com/Xeryus01/data/main/negara_kapal.csv"
+data_asal_kapal <- read_csv(myfile)
 data_asal_kapal$time <- as.Date(data_asal_kapal$date, "%Y-%m-%d")
 data_asal_kapal$betterTime <- format(as.Date(data_asal_kapal$time), '%d %B %Y')
 
