@@ -5,6 +5,7 @@ Ini merupakan source code dari tugas individu Mata Kuliah Statistik Distribusi d
 ## Penggunaan
 
 - Perlu adanya software rstudio untuk mempermudah
+- File yang digunakan hanyalah ui.R dan server.R
 - Install semua dependencies yang diperlukan
   - shiny
   - ggplot2
