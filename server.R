@@ -273,22 +273,22 @@ function(input, output){
     temp <- data_asal_kapal %>%
       filter(date >= input$dateFrom & date <= input$dateTo)
     
-    for (i in 1:10) {
+    for (i in 1:11) {
       temp$cumulative[i] = temp$value[i]
     }
     
-    for (i in 11:NROW(temp$value)) {
-      temp$cumulative[i] = temp$value[i] + temp$cumulative[i-10]
+    for (i in 12:NROW(temp$value)) {
+      temp$cumulative[i] = temp$value[i] + temp$cumulative[i-11]
     }
     
-    temp <- tail(temp, 10)
+    temp <- tail(temp, 11)
     
     temp %>% 
       ggplot(aes(x=flag, y=cumulative, fill=flag)) + 
       geom_bar(stat='identity') +
       geom_text(aes(label=cumulative), position=position_dodge(width=1), vjust=-0.25) +
       labs(title = label,
-           x = "Jenis kapal",
+           x = "Asal negara",
            y = "Jumlah kapal",
            color = "Status perjalanan") 
   })
